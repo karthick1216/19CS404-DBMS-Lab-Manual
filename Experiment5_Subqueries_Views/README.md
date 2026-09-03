@@ -38,123 +38,166 @@ DROP VIEW view_name;
 
 **Question 1**
 --
--- Paste Question 1 here
+<img width="865" height="477" alt="image" src="https://github.com/user-attachments/assets/2a860c68-3a94-4348-b483-7b345e02f527" />
 
 ```sql
--- Paste your SQL code below for Question 1
+Select *
+from CUSTOMERs
+where ADDRESS='Delhi';
 ```
 
 **Output:**
 
-![Output1](output.png)
+Select *
+from CUSTOMERs
+where ADDRESS='Delhi';
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="1128" height="543" alt="image" src="https://github.com/user-attachments/assets/4767e493-2a98-4ace-9355-81676da5a1f4" />
 
 ```sql
--- Paste your SQL code below for Question 2
+select salesman_id, name
+from salesman
+where salesman_id in (select salesman_id from customer group by salesman_id having count(customer_id)>1) ;
+
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1270" height="727" alt="image" src="https://github.com/user-attachments/assets/8d40f558-b868-4442-aa4c-311c872e3a7d" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="860" height="492" alt="image" src="https://github.com/user-attachments/assets/f4f24b05-7e62-4081-9a68-9fa13e2e69ff" />
+
 
 ```sql
--- Paste your SQL code below for Question 3
+select *
+from CUSTOMERS
+where SALARY>4500
 ```
 
 **Output:**
 
-![Output3](output.png)
+select *
+from CUSTOMERS
+where SALARY>4500
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="880" height="485" alt="image" src="https://github.com/user-attachments/assets/046f75f7-5ee1-47fe-8464-39fca9b6dc7b" />
+
 
 ```sql
--- Paste your SQL code below for Question 4
+select *
+from CUSTOMERS
+where ADDRESS='Delhi' and AGE<30
+order by id asc;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1325" height="767" alt="image" src="https://github.com/user-attachments/assets/a40ecef5-064d-4d2c-875c-47190762e796" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="915" height="481" alt="image" src="https://github.com/user-attachments/assets/2c86bf8d-7072-4a07-a6e7-bd8e036dc3ce" />
+
 
 ```sql
--- Paste your SQL code below for Question 5
+select *
+from CUSTOMERS
+where SALARY =1500;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1302" height="752" alt="image" src="https://github.com/user-attachments/assets/1913aae2-ece0-4a10-97d4-5a63db2e2558" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="862" height="577" alt="image" src="https://github.com/user-attachments/assets/8064486b-967d-4b6a-8620-cbfe70c11a31" />
 
 ```sql
--- Paste your SQL code below for Question 6
+select *
+from CUSTOMERS
+where AGE <30;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1265" height="802" alt="image" src="https://github.com/user-attachments/assets/f0b32ec5-a781-4f09-9fd5-f7cfb83d93af" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="1057" height="362" alt="image" src="https://github.com/user-attachments/assets/a613dcd8-1f9c-4f8f-81ec-16f1e2073f33" />
+
 
 ```sql
--- Paste your SQL code below for Question 7
+select grade, COUNT(*)
+from customer
+group by grade
+having grade > (select AVG(grade) from customer where city='New York' );
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1290" height="735" alt="image" src="https://github.com/user-attachments/assets/532a696f-06f9-4cc2-a25e-6d864ac9eed2" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="1132" height="562" alt="image" src="https://github.com/user-attachments/assets/b6b9edb4-1f51-48e9-8d87-dffec09906ad" />
+
 
 ```sql
--- Paste your SQL code below for Question 8
+select *
+from ORDERS
+where salesman_id in (select salesman_id from SALESMAN where city='New York');
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1260" height="790" alt="image" src="https://github.com/user-attachments/assets/6d69882a-3fba-43b0-bfd6-dcefa84d766b" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="838" height="402" alt="image" src="https://github.com/user-attachments/assets/26bc0947-63b0-4b1b-a100-3d7e998bcbb4" />
+
 
 ```sql
--- Paste your SQL code below for Question 9
+select *
+from customer
+where city  != (select city from customer where id = (select MAX(id) from customer));
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1290" height="776" alt="image" src="https://github.com/user-attachments/assets/f3f22fe0-57d8-4fe3-8f73-a1eba4ac9c0c" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="881" height="538" alt="image" src="https://github.com/user-attachments/assets/78c54ca6-359a-4998-a56d-21b6811aec1c" />
+
 
 ```sql
--- Paste your SQL code below for Question 10
+select *
+from customer
+where customer_id = (select salesman_id -2001 from salesman where name='Mc Lyon');
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1278" height="695" alt="image" src="https://github.com/user-attachments/assets/0b9651ce-99fe-40c2-b4fd-6fb09fa21d85" />
+
 
 
 ## RESULT
